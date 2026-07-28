@@ -71,9 +71,12 @@
         .signo-nome { font-size: 26px; font-weight: 800; color: #00f0ff; margin-bottom: 5px; text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); text-transform: uppercase; }
         .ascendente-nome { font-size: 18px; color: #ff007f; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
         .perfil { font-size: 15px; line-height: 1.6; color: #e0dbff; background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; border-left: 4px solid #ff007f; text-align: left; margin-bottom: 20px; }
+        /* Ajustado para ser um link em formato de botão real */
         .btn-whatsapp {
-            background: linear-gradient(90deg, #25D366, #128C7E); color: #ffffff; border: none; padding: 10px 25px;
-            border-radius: 25px; font-size: 14px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); transition: 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;
+            display: inline-block; text-decoration: none; background: linear-gradient(90deg, #25D366, #128C7E); 
+            color: #ffffff; border: none; padding: 12px 25px; border-radius: 25px; font-size: 14px; 
+            font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); 
+            transition: 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;
         }
         .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37, 211, 102, 0.6); }
         @keyframes pulsar { 0% { transform: scale(1); filter: brightness(1); } 50% { transform: scale(1.05); filter: brightness(1.2); } 100% { transform: scale(1); filter: brightness(1); } }
@@ -103,7 +106,8 @@
         <div id="signoNome" class="signo-nome"></div>
         <div id="ascendenteNome" class="ascendente-nome"></div>
         <div id="signoPerfil" class="perfil"></div>
-        <button class="btn-whatsapp" onclick="compartilharWhatsApp()">🟢 Compartilhar no WhatsApp</button>
+        <!-- Alterado de button para uma tag "a" de link nativo para evitar bloqueios do celular -->
+        <a id="lnkWhatsapp" class="btn-whatsapp" href="#" target="_blank">🟢 Compartilhar no WhatsApp</a>
     </div>
 </div>
 <script>
@@ -123,7 +127,6 @@ const dadosSignos = [
     { nome: "Capricórnio", elemento: "terra", figura: "♑", inicio: "12-22", fim: "12-31", perfil: "O CEO do zodíaco. Nasceu de terno, gravata e com uma planilha do Excel aberta. É focado, extremamente responsável e prático, mas o coração é tão duro que se cair no chão quebra o piso. Trabalha enquanto os outros dormem e reclama que os outros estão dormindo em vez de trabalho. Divertimento favorito: olhar o saldo bancário e economizar três centavos." }
 ];
 const ordemSignos = ["Áries", "Touro", "Gêmeos", "Câncer", "Leão", "Virgem", "Libra", "Escorpião", "Sagitário", "Capricórnio", "Aquário", "Peixes"];
-let mensagemCompartilhar = "";
 function descobrirMapa() {
     const inputData = document.getElementById("dataNascimento").value;
     const inputHora = document.getElementById("horaNascimento").value;
@@ -166,16 +169,13 @@ function descobrirMapa() {
         document.getElementById("ascendenteNome").innerText = "Ascendente: " + ascendenteCalculado;
         document.getElementById("signoPerfil").innerText = signoSolar.perfil + " Seu ascendente em " + ascendenteCalculado + " é a máscara que você usa para enganar o mundo na primeira impressão!";
         
-        mensagemCompartilhar = "🌌 *MEU MAPA ASTRAL EXPRESS* 🌌%0A%0A☀️ *Signo Solar:* " + signoSolar.figura + " " + signoSolar.nome + "%0A🌅 *Ascendente:* " + ascendenteCalculado + "%0A%0A🔮 *Perfil:* " + signoSolar.perfil + "%0A%0A🔗 Descubra o seu também: " + window.location.href;
+        // Constrói a mensagem e injeta diretamente no atributo "href" do link nativo
+        let textoMensagem = "🌌 *MEU MAPA ASTRAL EXPRESS* 🌌%0A%0A☀️ *Signo Solar:* " + signoSolar.figura + " " + signoSolar.nome + "%0A🌅 *Ascendente:* " + ascendenteCalculado + "%0A%0A🔮 *Perfil:* " + signoSolar.perfil + "%0A%0A🔗 Descubra o seu também: " + window.location.href;
+        
+        document.getElementById("lnkWhatsapp").href = "https://whatsapp.com" + textoMensagem;
         document.getElementById("resultado").style.display = "block";
-    }
-}
-function compartilharWhatsApp() {
-    if (mensagemCompartilhar !== "") {
-        window.open("https://whatsapp.com" + mensagemCompartilhar, "_blank");
     }
 }
 </script>
 </body>
 </html>
-
