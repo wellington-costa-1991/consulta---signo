@@ -166,12 +166,11 @@ function descobrirMapa() {
         document.getElementById("ascendenteNome").innerText = "Ascendente: " + ascendenteCalculado;
         document.getElementById("signoPerfil").innerText = signoSolar.perfil + " Seu ascendente em " + ascendenteCalculado + " é a máscara que você usa para enganar o mundo na primeira impressão!";
         
-        // Mensagem formatada com códigos %0A para pular linha nativamente no WhatsApp link
         mensagemCompartilhar = "🌌 *MEU MAPA ASTRAL EXPRESS* 🌌%0A%0A☀️ *Signo Solar:* " + signoSolar.figura + " " + signoSolar.nome + "%0A🌅 *Ascendente:* " + ascendenteCalculado + "%0A%0A🔮 *Perfil:* " + signoSolar.perfil + "%0A%0A🔗 Descubra o seu também: " + window.location.href;
         document.getElementById("resultado").style.display = "block";
     }
 }
-function compartirWhatsApp() {
+function compartilharWhatsApp() {
     if (mensagemCompartilhar !== "") {
         window.open("https://whatsapp.com" + mensagemCompartilhar, "_blank");
     }
@@ -179,3 +178,4 @@ function compartirWhatsApp() {
 </script>
 </body>
 </html>
+
