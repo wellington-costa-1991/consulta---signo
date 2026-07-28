@@ -1,191 +1,190 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Horóscopo Neon - Signo e Ascendente</title>
-    <!-- Esta linha define o emoji de galáxia como o ícone da aba do navegador -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://w3.org viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
-<!-- Conecta o arquivo de configuração do aplicativo -->
-<link rel="manifest" href="manifest.json">
-
-<!-- Ativa o instalador no celular via JavaScript -->
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
-</script>
-<style>
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #0d0124, #1f0147, #4b0082);
-        color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        padding: 20px 0;
-      }
-      .container {
-        background-color: rgba(15, 12, 30, 0.9);
-        padding: 35px 25px;
-        border-radius: 20px;
-        border: 2px solid #00f0ff;
-        box-shadow:
-          0 0 20px rgba(0, 240, 255, 0.4),
-          0 0 40px rgba(255, 0, 128, 0.2);
-        text-align: center;
-        max-width: 420px;
-        width: 100%;
-      }
-      h1 {
-        background: linear-gradient(45deg, #ff007f, #00f0ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 30px;
-        margin-top: 0;
-        margin-bottom: 5px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      p {
-        color: #b0a8ff;
-        font-size: 14px;
-        margin-bottom: 20px;
-      }
-      .animais-grid {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 8px;
-        margin-bottom: 25px;
-        padding: 10px;
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 12px;
-      }
-      .animal-item {
-        font-size: 22px;
-        opacity: 0.4;
-        transition: 0.3s;
-      }
-      .animal-item:hover {
-        opacity: 1;
-        transform: scale(1.2);
-      }
-      .input-group {
-        margin-bottom: 20px;
-        text-align: left;
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      label {
-        display: block;
-        color: #00f0ff;
-        font-size: 12px;
-        text-transform: uppercase;
-        margin-bottom: 5px;
-        font-weight: bold;
-        letter-spacing: 1px;
-      }
-      input[type="date"],
-      input[type="time"] {
-        width: 100%;
-        padding: 12px;
-        border: 2px solid #3d2b7a;
-        background-color: #1a0f30;
-        color: #ffffff;
-        border-radius: 10px;
-        font-size: 16px;
-        box-sizing: border-box;
-        outline: none;
-        transition: 0.3s;
-      }
-      input:focus {
-        border-color: #ff007f;
-        box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
-      }
-      button {
-        background: linear-gradient(90deg, #ff007f, #ff5500);
-        color: #ffffff;
-        border: none;
-        padding: 14px 35px;
-        border-radius: 30px;
-        font-size: 16px;
-        font-weight: bold;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        cursor: pointer;
-        box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
-        transition: 0.3s ease;
-        margin-top: 10px;
-      }
-      button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(255, 0, 127, 0.7);
-      }
-      .resultado {
-        margin-top: 30px;
-        padding-top: 25px;
-        border-top: 2px dashed #3d2b7a;
-        display: none;
-      }
-      .signo-figura {
-        font-size: 75px;
-        margin-bottom: 10px;
-        text-shadow:
-          0 0 20px #00f0ff,
-          0 0 40px #ff007f;
-        animation: pulsar 2s infinite ease-in-out;
-      }
-      .signo-nome {
-        font-size: 26px;
-        font-weight: 800;
-        color: #00f0ff;
-        margin-bottom: 5px;
-        text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-        text-transform: uppercase;
-      }
-      .ascendente-nome {
-        font-size: 18px;
-        color: #ff007f;
-        font-weight: bold;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-      .perfil {
-        font-size: 15px;
-        line-height: 1.6;
-        color: #e0dbff;
-        background: rgba(255, 255, 255, 0.05);
-        padding: 15px;
-        border-radius: 10px;
-        border-left: 4px solid #ff007f;
-        text-align: left;
-      }
-      @keyframes pulsar {
-        0% {
-          transform: scale(1);
-          filter: brightness(1);
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://w3.org viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0d0124, #1f0147, #4b0082);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px 0;
         }
-        50% {
-          transform: scale(1.05);
-          filter: brightness(1.2);
+        .container {
+            background-color: rgba(15, 12, 30, 0.9);
+            padding: 35px 25px;
+            border-radius: 20px;
+            border: 2px solid #00f0ff;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), 0 0 40px rgba(255, 0, 128, 0.2);
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+            position: relative;
         }
-        100% {
-          transform: scale(1);
-          filter: brightness(1);
+        /* Botão de Instalar Neon Flutuante/Discreto no topo */
+        #btnInstalar {
+            display: none;
+            background: linear-gradient(90deg, #00f0ff, #ff007f);
+            color: #ffffff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+            margin-bottom: 15px;
+            transition: 0.3s;
         }
-      }
+        #btnInstalar:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.9);
+            transform: scale(1.05);
+        }
+        h1 { 
+            background: linear-gradient(45deg, #ff007f, #00f0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 30px;
+            margin-top: 0;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        p {
+            color: #b0a8ff;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .animais-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
+            margin-bottom: 25px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+        }
+        .animal-item {
+            font-size: 22px;
+            opacity: 0.4;
+            transition: 0.3s;
+        }
+        .animal-item:hover { opacity: 1; transform: scale(1.2); }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        label {
+            display: block;
+            color: #00f0ff;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        input[type="date"], input[type="time"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #3d2b7a;
+            background-color: #1a0f30;
+            color: #ffffff;
+            border-radius: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #ff007f;
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
+        }
+        .btn-principal {
+            background: linear-gradient(90deg, #ff007f, #ff5500);
+            color: #ffffff;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
+            transition: 0.3s ease;
+            margin-top: 10px;
+        }
+        .btn-principal:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 0, 127, 0.7);
+        }
+        .resultado {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 2px dashed #3d2b7a;
+            display: none;
+        }
+        .signo-figura {
+            font-size: 75px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px #00f0ff, 0 0 40px #ff007f;
+            animation: pulsar 2s infinite ease-in-out;
+        }
+        .signo-nome { 
+            font-size: 26px; 
+            font-weight: 800; 
+            color: #00f0ff; 
+            margin-bottom: 5px; 
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            text-transform: uppercase;
+        }
+        .ascendente-nome {
+            font-size: 18px;
+            color: #ff007f;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .perfil { 
+            font-size: 15px; 
+            line-height: 1.6; 
+            color: #e0dbff; 
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #ff007f;
+            text-align: left;
+        }
+        @keyframes pulsar {
+            0% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.05); filter: brightness(1.2); }
+            100% { transform: scale(1); filter: brightness(1); }
+        }
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Mapa Astral Express</h1>
-      <p>Insira seus dados cósmicos para revelar sua energia</p>
+</head>
+<body>
 
-      <div class="animais-grid">
+<div class="container">
+    <!-- Novo Botão de Instalação -->
+    <button id="btnInstalar">📲 Instalar Aplicativo</button>
+
+    <h1>Mapa Astral Express</h1>
+    <p>Insira seus dados cósmicos para revelar sua energia</p>
+    
+    <div class="animais-grid">
         <div class="animal-item" title="Áries">🐏</div>
         <div class="animal-item" title="Touro">🐂</div>
         <div class="animal-item" title="Gêmeos">♊</div>
@@ -198,182 +197,56 @@
         <div class="animal-item" title="Capricórnio">🐐</div>
         <div class="animal-item" title="Aquário">⚱️</div>
         <div class="animal-item" title="Peixes">🐟</div>
-      </div>
-
-      <div class="input-group">
+    </div>
+    
+    <div class="input-group">
         <label for="dataNascimento">Data de Nascimento</label>
-        <input type="date" id="dataNascimento" />
-      </div>
+        <input type="date" id="dataNascimento">
+    </div>
 
-      <div class="input-group">
+    <div class="input-group">
         <label for="horaNascimento">Hora de Nascimento</label>
-        <input type="time" id="horaNascimento" />
-      </div>
+        <input type="time" id="horaNascimento">
+    </div>
 
-      <button onclick="descobrirMapa()">Revelar Destino</button>
+    <button class="btn-principal" onclick="descobrirMapa()">Revelar Destino</button>
 
-      <div id="resultado" class="resultado">
+    <div id="resultado" class="resultado">
         <div id="signoFigura" class="signo-figura"></div>
         <div id="signoNome" class="signo-nome"></div>
         <div id="ascendenteNome" class="ascendente-nome"></div>
         <div id="signoPerfil" class="perfil"></div>
-      </div>
     </div>
+</div>
 
-    <script>
-      const dadosSignos = [
-        {
-          nome: "Capricórnio",
-          figura: "♑",
-          inicio: "01-01",
-          fim: "01-19",
-          perfil: "Determinado, prático, focado em metas e muito responsável.",
-        },
-        {
-          nome: "Aquário",
-          figura: "♒",
-          inicio: "01-20",
-          fim: "02-18",
-          perfil:
-            "Inovador, independente, idealista e valoriza muito a liberdade.",
-        },
-        {
-          nome: "Peixes",
-          figura: "♓",
-          inicio: "02-19",
-          fim: "03-20",
-          perfil:
-            "Empático, intuitivo, sonhador e com forte conexão artística.",
-        },
-        {
-          nome: "Áries",
-          figura: "♈",
-          inicio: "03-21",
-          fim: "04-19",
-          perfil: "Corajoso, enérgico, leader nato e cheio de iniciativa.",
-        },
-        {
-          nome: "Touro",
-          figura: "♉",
-          inicio: "04-20",
-          fim: "05-20",
-          perfil:
-            "Paciente, confiável, determinado e amante do conforto e da estabilidade.",
-        },
-        {
-          nome: "Gêmeos",
-          figura: "♊",
-          inicio: "05-21",
-          fim: "06-20",
-          perfil:
-            "Comunicativo, curioso, versátil e adora aprender coisas novas.",
-        },
-        {
-          nome: "Câncer",
-          figura: "♋",
-          inicio: "06-21",
-          fim: "07-22",
-          perfil:
-            "Protetor, intuitivo, ligado à família e com emoções profundas.",
-        },
-        {
-          nome: "Leão",
-          figura: "♌",
-          inicio: "07-23",
-          fim: "08-22",
-          perfil: "Criativo, generoso, confiante e com um magnetismo natural.",
-        },
-        {
-          nome: "Virgem",
-          figura: "♍",
-          inicio: "08-23",
-          fim: "09-22",
-          perfil: "Analítico, organizado, detalhista e sempre pronto a ajudar.",
-        },
-        {
-          nome: "Libra",
-          figura: "♎",
-          inicio: "09-23",
-          fim: "10-22",
-          perfil:
-            "Diplomático, justo, sociável e busca sempre a harmonia e o equilíbrio.",
-        },
-        {
-          nome: "Escorpião",
-          figura: "♏",
-          inicio: "10-23",
-          fim: "11-21",
-          perfil:
-            "Intenso, determinado, intuitivo e com grande poder de transformação.",
-        },
-        {
-          nome: "Sagitário",
-          figura: "♐",
-          inicio: "11-22",
-          fim: "12-21",
-          perfil: "Otimista, aventureiro, bem-humorado e amante da sabedoria.",
-        },
-        {
-          nome: "Capricórnio",
-          figura: "♑",
-          inicio: "12-22",
-          fim: "12-31",
-          perfil: "Determinado, prático, focado em metas e muito responsável.",
-        },
-      ];
+<script>
+const dadosSignos = [
+    { nome: "Capricórnio", figura: "♑", inicio: "01-01", fim: "01-19", perfil: "Determinado, prático, focado em metas e muito responsável." },
+    { nome: "Aquário", figura: "♒", inicio: "01-20", fim: "02-18", perfil: "Inovador, independente, idealista e valoriza muito a liberdade." },
+    { nome: "Peixes", figura: "♓", inicio: "02-19", fim: "03-20", perfil: "Empático, intuitivo, sonhador e com forte conexão artística." },
+    { nome: "Áries", figura: "♈", inicio: "03-21", fim: "04-19", perfil: "Corajoso, enérgico, líder nato e cheio de iniciativa." },
+    { nome: "Touro", figura: "♉", inicio: "04-20", fim: "05-20", perfil: "Paciente, confiável, determinado e amante do conforto e da estabilidade." },
+    { nome: "Gêmeos", figura: "♊", inicio: "05-21", fim: "06-20", perfil: "Comunicativo, curioso, versátil e adora aprender coisas novas." },
+    { nome: "Câncer", figura: "♋", inicio: "06-21", fim: "07-22", perfil: "Protetor, intuitivo, ligado à família e com emoções profundas." },
+    { nome: "Leão", figura: "♌", inicio: "07-23", fim: "08-22", perfil: "Criativo, generoso, confiante e com um magnetismo natural." },
+    { nome: "Virgem", figura: "♍", inicio: "08-23", fim: "09-22", perfil: "Analítico, organizado, detalhista e sempre pronto a ajudar." },
+    { nome: "Libra", figura: "♎", inicio: "09-23", fim: "10-22", perfil: "Diplomático, justo, sociável e busca sempre a harmonia e o equilíbrio." },
+    { nome: "Escorpião", figura: "♏", inicio: "10-23", fim: "11-21", perfil: "Intenso, determinado, intuitivo e com grande poder de transformação." },
+    { nome: "Sagitário", figura: "♐", inicio: "11-22", fim: "12-21", perfil: "Otimista, aventureiro, bem-humorado e amante da sabedoria." },
+    { nome: "Capricórnio", figura: "♑", inicio: "12-22", fim: "12-31", perfil: "Determinado, prático, focado em metas e muito responsável." }
+];
 
-      const ordemSignos = [
-        "Áries",
-        "Touro",
-        "Gêmeos",
-        "Câncer",
-        "Leão",
-        "Virgem",
-        "Libra",
-        "Escorpião",
-        "Sagitário",
-        "Capricórnio",
-        "Aquário",
-        "Peixes",
-      ];
+const ordemSignos = ["Áries", "Touro", "Gêmeos", "Câncer", "Leão", "Virgem", "Libra", "Escorpião", "Sagitário", "Capricórnio", "Aquário", "Peixes"];
 
-      function descobrirMapa() {
-        const inputData = document.getElementById("dataNascimento").value;
-        const inputHora = document.getElementById("horaNascimento").value;
+function descobrirMapa() {
+    const inputData = document.getElementById("dataNascimento").value;
+    const inputHora = document.getElementById("horaNascimento").value;
 
-        if (!inputData || !inputHora) {
-          alert("Por favor, preencha a data e a hora cósmicas!");
-          return;
-        }
+    if (!inputData || !inputHora) {
+        alert("Por favor, preencha a data e a hora cósmicas!");
+        return;
+    }
 
-        const [ano, mes, dia] = inputData.split("-");
-        const dataFormatada = `${mes}-${dia}`;
-        const signoSolar = dadosSignos.find(
-          (signo) =>
-            dataFormatada >= signo.inicio && dataFormatada <= signo.fim,
-        );
+    const [ano, mes, dia] = inputData.split("-");
+    const dataFormatada = `${mes}-${dia}`;
 
-        if (signoSolar) {
-          const [hora, minuto] = inputHora.split(":").map(Number);
-          let indiceSolar = ordemSignos.indexOf(signoSolar.nome);
-
-          let horasPassadasDiz06 = hora >= 6 ? hora - 6 : hora + 18;
-          let passosSignos = Math.floor(horasPassadasDiz06 / 2);
-
-          let indiceAscendente = (indiceSolar + passosSignos) % 12;
-          let ascendenteCalculado = ordemSignos[indiceAscendente];
-
-          document.getElementById("signoFigura").innerText = signoSolar.figura;
-          document.getElementById("signoNome").innerText =
-            `Signo Solar: ${signoSolar.nome}`;
-          document.getElementById("ascendenteNome").innerText =
-            `Ascendente: ${ascendenteCalculado}`;
-          document.getElementById("signoPerfil").innerText =
-            `${signoSolar.perfil} Seu ascendente em ${ascendenteCalculado} indica a forma como você se projeta para o mundo e a primeira impressão que causa nas pessoas.`;
-
-          document.getElementById("resultado").style.display = "block";
-        }
-      }
-    </script>
-  </body>
-</html>
