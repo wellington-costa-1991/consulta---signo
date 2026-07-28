@@ -29,7 +29,6 @@
             width: 100%;
             position: relative;
         }
-        /* Botão de Instalar Neon Flutuante/Discreto no topo */
         #btnInstalar {
             display: none;
             background: linear-gradient(90deg, #00f0ff, #ff007f);
@@ -178,7 +177,6 @@
 <body>
 
 <div class="container">
-    <!-- Novo Botão de Instalação -->
     <button id="btnInstalar">📲 Instalar Aplicativo</button>
 
     <h1>Mapa Astral Express</h1>
@@ -249,4 +247,7 @@ function descobrirMapa() {
 
     const [ano, mes, dia] = inputData.split("-");
     const dataFormatada = `${mes}-${dia}`;
+    const signoSolar = dadosSignos.find(signo => dataFormatada >= signo.inicio && dataFormatada <= signo.fim);
 
+    if (signoSolar) {
+        const [hora, minuto] = inputHora.split(":").map(Number);
