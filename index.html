@@ -4,7 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Horóscopo Neon - Signo e Ascendente</title>
-    <style>
+    <!-- Esta linha define o emoji de galáxia como o ícone da aba do navegador -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://w3.org viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
+<!-- Conecta o arquivo de configuração do aplicativo -->
+<link rel="manifest" href="manifest.json">
+
+<!-- Ativa o instalador no celular via JavaScript -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+  }
+</script>
+<style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         background: linear-gradient(135deg, #0d0124, #1f0147, #4b0082);
