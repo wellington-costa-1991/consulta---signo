@@ -115,7 +115,7 @@ const dadosSignos = [
     { nome: "Touro", elemento: "terra", figura: "♉", inicio: "04-20", fim: "05-20", perfil: "O rei do camarote e da soneca. Paciente, confiável e muito determinado, mas se você tentar mudar a opinião dele, é mais fácil mover uma montanha. Ama o conforto, a estabilidade e, acima de tudo, comida boa. Se estiver de mau humor, dê um lanche que resolve. Odeia gastar dinheiro, exceto se for com luxuries para si mesmo ou delivery de madrugada." },
     { nome: "Gêmeos", elemento: "ar", figura: "♊", inicio: "05-21", fim: "06-20", perfil: "A própria rádio comunidade. Comunicativo, curioso e versátil, fala mais que o homem da cobra e sabe fofocas de pessoas que ele nem conhece. Tem duas personalidades (muda de opinião três vezes enquanto lê esta frase) e se entedia mais rápido do que um piscar de olhos. Se você mandar um áudio de 5 minutos, ele vai responder com um de 10." },
     { nome: "Câncer", elemento: "agua", figura: "♋", inicio: "06-21", fim: "07-22", perfil: "O coração de mãe do zodíaco. Protetor, intuitivo e extremamente apegado à família, mas guarda rancor desde 2012 de um olhar torto que você deu para ele. Chora por tudo, cuida de todo mundo e adora drama. Se ele te ama, vai te encher de comida e carinho; se ele estiver chateado, vai se trancar no quarto, andar de lado igual um caranguejo e te ignorar por três dias." },
-    { nome: "Leão", elemento: "fogo", figura: "♌", inicio: "07-23", fim: "08-22", perfil: "O dono do holofote. Criativo, generoso e cheio de confiança, nasceu achando que o mundo é o palco dele e os outros são os figurantes. O cabelo é sagrado e o espelho é o seu melhor amigo. Tem um magnetismo natural gigante, mas o ego é tão grande que precisa de um cômodo próprio. Se não for para chamar a atenção e ser elogiado, ele nem sai de casa." },
+    { nome: "Leão", elemento: "fogo", figura: "♌", inicio: "07-23", fim: "08-22", perfil: "O dono do holofote. Criativo, generoso e cheio de confiança, nasceu achando que o mundo é o palco dele e os outros são os figurantes. O cabelo é shadow e o espelho é o seu melhor amigo. Tem um magnetismo natural gigante, mas o ego é tão grande que precisa de um cômodo próprio. Se não for para chamar a atenção e ser elogiado, ele nem sai de casa." },
     { nome: "Virgem", elemento: "terra", figura: "♍", inicio: "08-23", fim: "09-22", perfil: "O fiscal da limpeza e da vida alheia. Analítico, ultra organizado e detalhista, sofre de ansiedade só de ver um quadro torto na parede ou uma notificação não lida no celular. Sempre acha que o jeito dele é o único certo (e geralmente é). Crítico profissional, vai te ajudar a resolver todos os seus problemas, mas vai reclamar de cada um deles enquanto conserta." },
     { nome: "Libra", elemento: "ar", figura: "♎", inicio: "09-23", fim: "10-22", perfil: "O indeciso charmoso. Diplomático, justo e super sociável, passa duas horas escolher o sabor da pizza para no final pedir metade calabresa e metade muçarela com medo de errar. Ama a harmonia e odeia barracos, prefere concordar com todo mundo só para manter a paz. Gasta o dinheiro que não tem para sair bonito na foto e tem um estoque infinito de contatinhos." },
     { nome: "Escorpião", elemento: "agua", figura: "♏", inicio: "10-23", fim: "11-21", perfil: "O agente secreto do FBI. Intenso, determinado e com uma intuição que beira a bruxaria, ele sabe que você mentiu antes mesmo de você abrir a boca. Misterioso por natureza, não conta a vida dele para ninguém, mas investiga a sua até descobrir quem era o seu vizinho da pré-escola. Não pise no calo dele: a vingança é um prato que ele serve congelado." },
@@ -166,16 +166,16 @@ function descobrirMapa() {
         document.getElementById("ascendenteNome").innerText = "Ascendente: " + ascendenteCalculado;
         document.getElementById("signoPerfil").innerText = signoSolar.perfil + " Seu ascendente em " + ascendenteCalculado + " é a máscara que você usa para enganar o mundo na primeira impressão!";
         
-        mensagemCompartilhar = "MEU MAPA ASTRAL \n\nSigno Solar: " + signoSolar.figura + " " + signoSolar.nome + "\nAscendente: " + ascendenteCalculado + "\n\nPerfil: " + signoSolar.perfil + "\n\nDescubra o seu também: " + window.location.href;
+        // Mensagem formatada com códigos %0A para pular linha nativamente no WhatsApp link
+        mensagemCompartilhar = "🌌 *MEU MAPA ASTRAL EXPRESS* 🌌%0A%0A☀️ *Signo Solar:* " + signoSolar.figura + " " + signoSolar.nome + "%0A🌅 *Ascendente:* " + ascendenteCalculado + "%0A%0A🔮 *Perfil:* " + signoSolar.perfil + "%0A%0A🔗 Descubra o seu também: " + window.location.href;
         document.getElementById("resultado").style.display = "block";
     }
 }
-function compartilharWhatsApp() {
+function compartirWhatsApp() {
     if (mensagemCompartilhar !== "") {
-        window.open("https://whatsapp.com" + encodeURIComponent(mensagemCompartilhar), "_blank");
+        window.open("https://whatsapp.com" + mensagemCompartilhar, "_blank");
     }
 }
 </script>
 </body>
 </html>
-
