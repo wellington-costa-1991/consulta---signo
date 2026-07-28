@@ -1,6 +1,6 @@
 # 🌌 Mapa Astral Express
 
-Um aplicativo web moderno, responsivo e de alta performance desenvolvido com **HTML5, CSS3 e JavaScript puro**. O projeto foi desenhado com uma estética futurista baseada em uma paleta de cores vivas e efeitos neon luminosos, simulando a energia profunda do espaço sideral.
+Um aplicativo web moderno, responsivo e de alta performance desenvolvido com **HTML5, CSS3 e JavaScript**. O projeto foi desenhado com uma estética futurista baseada em uma paleta de cores vivas e efeitos neon luminosos, simulando a energia profunda do espaço sideral.
 
 ---
 
