@@ -41,11 +41,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        p {
-            color: #b0a8ff;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
+        p { color: #b0a8ff; font-size: 14px; margin-bottom: 20px; }
         .animais-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -55,160 +51,53 @@
             background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
         }
-        .animal-item {
-            font-size: 22px;
-            opacity: 0.4;
-            transition: 0.3s;
-        }
+        .animal-item { font-size: 22px; opacity: 0.4; transition: 0.3s; }
         .animal-item:hover { opacity: 1; transform: scale(1.2); }
-        .input-group {
-            margin-bottom: 20px;
-            text-align: left;
-            width: 90%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        label {
-            display: block;
-            color: #00f0ff;
-            font-size: 12px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+        .input-group { margin-bottom: 20px; text-align: left; width: 90%; margin-left: auto; margin-right: auto; }
+        label { display: block; color: #00f0ff; font-size: 12px; text-transform: uppercase; margin-bottom: 5px; font-weight: bold; letter-spacing: 1px; }
         input[type="date"], input[type="time"] {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #3d2b7a;
-            background-color: #1a0f30;
-            color: #ffffff;
-            border-radius: 10px;
-            font-size: 16px;
-            box-sizing: border-box;
-            outline: none;
-            transition: 0.3s;
+            width: 100%; padding: 12px; border: 2px solid #3d2b7a; background-color: #1a0f30;
+            color: #ffffff; border-radius: 10px; font-size: 16px; box-sizing: border-box; outline: none; transition: 0.3s;
         }
-        input:focus {
-            border-color: #ff007f;
-            box-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
-        }
+        input:focus { border-color: #ff007f; box-shadow: 0 0 10px rgba(255, 0, 127, 0.5); }
         .btn-principal {
-            background: linear-gradient(90deg, #ff007f, #ff5500);
-            color: #ffffff;
-            border: none;
-            padding: 14px 35px;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4);
-            transition: 0.3s ease;
-            margin-top: 10px;
+            background: linear-gradient(90deg, #ff007f, #ff5500); color: #ffffff; border: none;
+            padding: 14px 35px; border-radius: 30px; font-size: 16px; font-weight: bold;
+            text-transform: uppercase; letter-spacing: 1px; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4); transition: 0.3s ease; margin-top: 10px;
         }
-        .btn-principal:hover { 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(255, 0, 127, 0.7);
-        }
-        .resultado {
-            margin-top: 30px;
-            padding-top: 25px;
-            border-top: 2px dashed #3d2b7a;
-            display: none;
-        }
-        .signo-figura {
-            font-size: 75px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 20px #00f0ff, 0 0 40px #ff007f;
-            animation: pulsar 2s infinite ease-in-out;
-        }
-        .signo-nome { 
-            font-size: 26px; 
-            font-weight: 800; 
-            color: #00f0ff; 
-            margin-bottom: 5px; 
-            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-            text-transform: uppercase;
-        }
-        .ascendente-nome {
-            font-size: 18px;
-            color: #ff007f;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .perfil { 
-            font-size: 15px; 
-            line-height: 1.6; 
-            color: #e0dbff; 
-            background: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 10px;
-            border-left: 4px solid #ff007f;
-            text-align: left;
-            margin-bottom: 20px;
-        }
+        .btn-principal:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(255, 0, 127, 0.7); }
+        .resultado { margin-top: 30px; padding-top: 25px; border-top: 2px dashed #3d2b7a; display: none; }
+        .signo-figura { font-size: 75px; margin-bottom: 10px; text-shadow: 0 0 20px #00f0ff, 0 0 40px #ff007f; animation: pulsar 2s infinite ease-in-out; }
+        .signo-nome { font-size: 26px; font-weight: 800; color: #00f0ff; margin-bottom: 5px; text-shadow: 0 0 10px rgba(0, 240, 255, 0.5); text-transform: uppercase; }
+        .ascendente-nome { font-size: 18px; color: #ff007f; font-weight: bold; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .perfil { font-size: 15px; line-height: 1.6; color: #e0dbff; background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 10px; border-left: 4px solid #ff007f; text-align: left; margin-bottom: 20px; }
         .btn-whatsapp {
-            background: linear-gradient(90deg, #25D366, #128C7E);
-            color: #ffffff;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
-            transition: 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            background: linear-gradient(90deg, #25D366, #128C7E); color: #ffffff; border: none; padding: 10px 25px;
+            border-radius: 25px; font-size: 14px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); transition: 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px;
         }
-        .btn-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(37, 211, 102, 0.6);
-        }
-        @keyframes pulsar {
-            0% { transform: scale(1); filter: brightness(1); }
-            50% { transform: scale(1.05); filter: brightness(1.2); }
-            100% { transform: scale(1); filter: brightness(1); }
-        }
+        .btn-whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37, 211, 102, 0.6); }
+        @keyframes pulsar { 0% { transform: scale(1); filter: brightness(1); } 50% { transform: scale(1.05); filter: brightness(1.2); } 100% { transform: scale(1); filter: brightness(1); } }
     </style>
 </head>
 <body>
-
 <div class="container" id="mainContainer">
     <h1>Mapa Astral Express</h1>
     <p>Insira seus dados cósmicos para revelar sua energia</p>
-    
     <div class="animais-grid">
-        <div class="animal-item" title="Áries">🐏</div>
-        <div class="animal-item" title="Touro">🐂</div>
-        <div class="animal-item" title="Gêmeos">♊</div>
-        <div class="animal-item" title="Câncer">🦀</div>
-        <div class="animal-item" title="Leão">🦁</div>
-        <div class="animal-item" title="Virgem">♍</div>
-        <div class="animal-item" title="Libra">⚖️</div>
-        <div class="animal-item" title="Escorpião">🦂</div>
-        <div class="animal-item" title="Sagitário">🏹</div>
-        <div class="animal-item" title="Capricórnio">🐐</div>
-        <div class="animal-item" title="Aquário">⚱️</div>
-        <div class="animal-item" title="Peixes">🐟</div>
+        <div class="animal-item" title="Áries">🐏</div><div class="animal-item" title="Touro">🐂</div><div class="animal-item" title="Gêmeos">♊</div>
+        <div class="animal-item" title="Câncer">🦀</div><div class="animal-item" title="Leão">🦁</div><div class="animal-item" title="Virgem">♍</div>
+        <div class="animal-item" title="Libra">⚖️</div><div class="animal-item" title="Escorpião">🦂</div><div class="animal-item" title="Sagitário">🏹</div>
+        <div class="animal-item" title="Capricórnio">🐐</div><div class="animal-item" title="Aquário">⚱️</div><div class="animal-item" title="Peixes">🐟</div>
     </div>
-    
     <div class="input-group">
         <label id="lblData" for="dataNascimento">Data de Nascimento</label>
         <input type="date" id="dataNascimento">
     </div>
-
     <div class="input-group">
         <label id="lblHora" for="horaNascimento">Hora de Nascimento</label>
         <input type="time" id="horaNascimento">
     </div>
-
     <button class="btn-principal" onclick="descobrirMapa()">Revelar Destino</button>
-
     <div id="resultado" class="resultado">
         <div id="signoFigura" class="signo-figura"></div>
         <div id="signoNome" class="signo-nome"></div>
@@ -217,7 +106,6 @@
         <button class="btn-whatsapp" onclick="compartilharWhatsApp()">🟢 Compartilhar no WhatsApp</button>
     </div>
 </div>
-
 <script>
 const dadosSignos = [
     { nome: "Capricórnio", elemento: "terra", figura: "♑", inicio: "01-01", fim: "01-19", perfil: "O CEO do zodíaco. Nasceu de terno, gravata e com uma planilha do Excel aberta. É focado, extremamente responsável e prático, mas o coração é tão duro que se cair no chão quebra o piso. Trabalha enquanto os outros dormem e reclama que os outros estão dormindo em vez de trabalhar. Divertimento favorito: olhar o saldo bancário e economizar três centavos." },
@@ -225,3 +113,69 @@ const dadosSignos = [
     { nome: "Peixes", elemento: "agua", figura: "♓", inicio: "02-19", fim: "03-20", perfil: "O diplomado na faculdade de sofrimento. Empático, intuitivo e extremamente sonhador, passa 90% do dia criando fics e cenários fictícios na própria cabeça que nunca vão acontecer. Chora assistindo comercial de margarina e absorve a energia ruim até de um poste na rua. Vive no mundo da lua e provavelmente esqueceu onde guardou a chave de casa agora." },
     { nome: "Áries", elemento: "fogo", figura: "♈", inicio: "03-21", fim: "04-19", perfil: "O perigo em pessoa. Corajoso, enérgico e cheio de iniciativa, mas tem a paciência de uma bomba-relógio com o cronômetro no zero. Não anda, corre; não fala, grita; e se você disser 'não passe por ali', ele passa correndo e quebrando tudo. Começa dez projetos por semana, não termina nenhum e se irrita se alguém tentar ajudar. Arrume uma briga com ele e ganhe um inimigo vitalício." },
     { nome: "Touro", elemento: "terra", figura: "♉", inicio: "04-20", fim: "05-20", perfil: "O rei do camarote e da soneca. Paciente, confiável e muito determinado, mas se você tentar mudar a opinião dele, é mais fácil mover uma montanha. Ama o conforto, a estabilidade e, acima de tudo, comida boa. Se estiver de mau humor, dê um lanche que resolve. Odeia gastar dinheiro, exceto se for com luxuries para si mesmo ou delivery de madrugada." },
+    { nome: "Gêmeos", elemento: "ar", figura: "♊", inicio: "05-21", fim: "06-20", perfil: "A própria rádio comunidade. Comunicativo, curioso e versátil, fala mais que o homem da cobra e sabe fofocas de pessoas que ele nem conhece. Tem duas personalidades (muda de opinião três vezes enquanto lê esta frase) e se entedia mais rápido do que um piscar de olhos. Se você mandar um áudio de 5 minutos, ele vai responder com um de 10." },
+    { nome: "Câncer", elemento: "agua", figura: "♋", inicio: "06-21", fim: "07-22", perfil: "O coração de mãe do zodíaco. Protetor, intuitivo e extremamente apegado à família, mas guarda rancor desde 2012 de um olhar torto que você deu para ele. Chora por tudo, cuida de todo mundo e adora drama. Se ele te ama, vai te encher de comida e carinho; se ele estiver chateado, vai se trancar no quarto, andar de lado igual um caranguejo e te ignorar por três dias." },
+    { nome: "Leão", elemento: "fogo", figura: "♌", inicio: "07-23", fim: "08-22", perfil: "O dono do holofote. Criativo, generoso e cheio de confiança, nasceu achando que o mundo é o palco dele e os outros são os figurantes. O cabelo é sagrado e o espelho é o seu melhor amigo. Tem um magnetismo natural gigante, mas o ego é tão grande que precisa de um cômodo próprio. Se não for para chamar a atenção e ser elogiado, ele nem sai de casa." },
+    { nome: "Virgem", elemento: "terra", figura: "♍", inicio: "08-23", fim: "09-22", perfil: "O fiscal da limpeza e da vida alheia. Analítico, ultra organizado e detalhista, sofre de ansiedade só de ver um quadro torto na parede ou uma notificação não lida no celular. Sempre acha que o jeito dele é o único certo (e geralmente é). Crítico profissional, vai te ajudar a resolver todos os seus problemas, mas vai reclamar de cada um deles enquanto conserta." },
+    { nome: "Libra", elemento: "ar", figura: "♎", inicio: "09-23", fim: "10-22", perfil: "O indeciso charmoso. Diplomático, justo e super sociável, passa duas horas escolher o sabor da pizza para no final pedir metade calabresa e metade muçarela com medo de errar. Ama a harmonia e odeia barracos, prefere concordar com todo mundo só para manter a paz. Gasta o dinheiro que não tem para sair bonito na foto e tem um estoque infinito de contatinhos." },
+    { nome: "Escorpião", elemento: "agua", figura: "♏", inicio: "10-23", fim: "11-21", perfil: "O agente secreto do FBI. Intenso, determinado e com uma intuição que beira a bruxaria, ele sabe que você mentiu antes mesmo de você abrir a boca. Misterioso por natureza, não conta a vida dele para ninguém, mas investiga a sua até descobrir quem era o seu vizinho da pré-escola. Não pise no calo dele: a vingança é um prato que ele serve congelado." },
+    { nome: "Sagitário", elemento: "fogo", figura: "♐", inicio: "11-22", fim: "12-21", perfil: "O inimigo do fim. Otimista, aventureiro e dono do pior filtro de conversa do mundo: fala a verdade nua e crua na sua cara rindo e achando que está arrasando. Ama a liberdade, festas e viagens, odeia rotina e cobranças. Tem a sorte inexplicável de fazer tudo errado e no final dar tudo certo. Rir do próprio desespero é o esporte favorito dele." },
+    { nome: "Capricórnio", elemento: "terra", figura: "♑", inicio: "12-22", fim: "12-31", perfil: "O CEO do zodíaco. Nasceu de terno, gravata e com uma planilha do Excel aberta. É focado, extremamente responsável e prático, mas o coração é tão duro que se cair no chão quebra o piso. Trabalha enquanto os outros dormem e reclama que os outros estão dormindo em vez de trabalho. Divertimento favorito: olhar o saldo bancário e economizar três centavos." }
+];
+const ordemSignos = ["Áries", "Touro", "Gêmeos", "Câncer", "Leão", "Virgem", "Libra", "Escorpião", "Sagitário", "Capricórnio", "Aquário", "Peixes"];
+let mensagemCompartilhar = "";
+function descobrirMapa() {
+    const inputData = document.getElementById("dataNascimento").value;
+    const inputHora = document.getElementById("horaNascimento").value;
+    if (!inputData || !inputHora) { alert("Por favor, preencha os dados cósmicos!"); return; }
+
+    const mes = inputData.slice(5, 7);
+    const dia = inputData.slice(8, 10);
+    const dataFormatada = mes + "-" + dia;
+    const signoSolar = dadosSignos.find(function(s) { return dataFormatada >= s.inicio && dataFormatada <= s.fim; });
+
+    if (signoSolar) {
+        const horaTexto = inputHora.slice(0, 2);
+        const hora = Number(horaTexto);
+        let indiceSolar = ordemSignos.indexOf(signoSolar.nome);
+        let horasPassadasDiz06 = (hora >= 6) ? (hora - 6) : (hora + 18);
+        let passosSignos = Math.floor(horasPassadasDiz06 / 2);
+        let indiceAscendente = (indiceSolar + passosSignos) % 12;
+        let ascendenteCalculado = ordemSignos[indiceAscendente];
+
+        if (signoSolar.elemento === "fogo") {
+            document.body.style.background = "linear-gradient(135deg, #2e0000, #5c0000, #990000)"; 
+            document.getElementById('mainContainer').style.borderColor = "#ff4500";
+            document.getElementById('mainContainer').style.boxShadow = "0 0 25px rgba(255, 69, 0, 0.6)";
+        } else if (signoSolar.elemento === "agua") {
+            document.body.style.background = "linear-gradient(135deg, #00112c, #00225c, #0044b3)"; 
+            document.getElementById('mainContainer').style.borderColor = "#00f0ff";
+            document.getElementById('mainContainer').style.boxShadow = "0 0 25px rgba(0, 240, 255, 0.6)";
+        } else if (signoSolar.elemento === "terra") {
+            document.body.style.background = "linear-gradient(135deg, #141c00, #283800, #4c6600)"; 
+            document.getElementById('mainContainer').style.borderColor = "#adff2f";
+            document.getElementById('mainContainer').style.boxShadow = "0 0 25px rgba(173, 255, 47, 0.5)";
+        } else if (signoSolar.elemento === "ar") {
+            document.body.style.background = "linear-gradient(135deg, #1a002c, #39005c, #6a00b3)"; 
+            document.getElementById('mainContainer').style.borderColor = "#df00ff";
+            document.getElementById('mainContainer').style.boxShadow = "0 0 25px rgba(223, 0, 255, 0.6)";
+        }
+
+        document.getElementById("signoFigura").innerText = signoSolar.figura;
+        document.getElementById("signoNome").innerText = "Signo Solar: " + signoSolar.nome;
+        document.getElementById("ascendenteNome").innerText = "Ascendente: " + ascendenteCalculado;
+        document.getElementById("signoPerfil").innerText = signoSolar.perfil + " Seu ascendente em " + ascendenteCalculado + " é a máscara que você usa para enganar o mundo na primeira impressão!";
+        
+        mensagemCompartilhar = "MEU MAPA ASTRAL \n\nSigno Solar: " + signoSolar.figura + " " + signoSolar.nome + "\nAscendente: " + ascendenteCalculado + "\n\nPerfil: " + signoSolar.perfil + "\n\nDescubra o seu também: " + window.location.href;
+        document.getElementById("resultado").style.display = "block";
+    }
+}
+function compartilharWhatsApp() {
+    if (mensagemCompartilhar !== "") {
+        window.open("https://whatsapp.com" + encodeURIComponent(mensagemCompartilhar), "_blank");
+    }
+}
+</script>
+</body>
+</html>
+
