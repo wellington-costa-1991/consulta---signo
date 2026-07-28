@@ -1,20 +1,21 @@
 /* global self */
-const CACHE_NAME = "mapa-astral-cache-v1";
-const ASSETS = ["./", "./index.html", "./manifest.json", "./sw.js"];
+const CACHE_NAME = "mapa-astral-cache-v2";
+const RECURSOS_PARA_SALVAR = [
+  "./",
+  "./index.html",
+  "./script.js",
+  "./manifest.json",
+];
 
-// Instala o Service Worker e guarda os arquivos no cache
 self.addEventListener("install", (e) => {
   e.waitUntil(
-    caches
-      .open(CACHE_NAME)
-      .then((cache) => {
-        return cache.addAll(ASSETS);
-      })
-      .then(() => self.skipWaiting()),
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(RECURSOS_PARA_SALVAR);
+    }),
   );
+  self.skipWaiting();
 });
 
-// Limpa caches antigos quando o app atualiza
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys().then((keys) => {
@@ -29,7 +30,6 @@ self.addEventListener("activate", (e) => {
   );
 });
 
-// Responde com os arquivos salvos se o usuário estiver sem internet
 self.addEventListener("fetch", (e) => {
   e.respondWith(
     caches.match(e.request).then((cachedResponse) => {

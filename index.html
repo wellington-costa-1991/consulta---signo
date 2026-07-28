@@ -9,7 +9,6 @@
       href="data:image/svg+xml,<svg xmlns=%22http://w3.org viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>"
     />
     <link rel="manifest" href="./manifest.json" />
-
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -40,25 +39,26 @@
         background: linear-gradient(90deg, #00f0ff, #ff007f);
         color: #ffffff;
         border: none;
-        padding: 8px 15px;
+        padding: 10px 20px;
         border-radius: 20px;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;
         cursor: pointer;
-        box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
-        margin-bottom: 15px;
-        transition: 0.3s;
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.8);
+        margin-bottom: 20px;
+        transition: 0.3s ease;
+        animation: pulsarBotao 1.5s infinite ease-in-out;
       }
       #btnInstalar:hover {
-        box-shadow: 0 0 20px rgba(255, 0, 127, 0.9);
+        box-shadow: 0 0 25px rgba(255, 0, 127, 1);
         transform: scale(1.05);
       }
       h1 {
         background: linear-gradient(45deg, #ff007f, #00f0ff);
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         background-clip: text;
+        -webkit-text-fill-color: transparent;
         font-size: 30px;
         margin-top: 0;
         margin-bottom: 5px;
@@ -194,6 +194,17 @@
           filter: brightness(1);
         }
       }
+      @keyframes pulsarBotao {
+        0% {
+          box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+        }
+        50% {
+          box-shadow: 0 0 25px rgba(0, 240, 255, 1);
+        }
+        100% {
+          box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+        }
+      }
     </style>
   </head>
   <body>
@@ -240,7 +251,6 @@
       </div>
     </div>
 
-    <!-- Esta linha puxa o arquivo JavaScript externo com segurança -->
     <script src="script.js"></script>
   </body>
 </html>
