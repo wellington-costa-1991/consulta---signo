@@ -6,7 +6,7 @@ Um aplicativo web moderno, responsivo e de alta performance desenvolvido com **H
 
 ### 🚀 Acesse o Aplicativo em Tempo Real
 Clique no link abaixo para testar o sistema direto do seu navegador ou celular:
-🔗 **[Clique aqui para abrir o Mapa Astral Express](https://github.io)**
+🔗 **[Clique aqui para abrir o Mapa Astral Express](https://wellington-costa-1991.github.io/consulta---signo/))**
 
 ---
 
