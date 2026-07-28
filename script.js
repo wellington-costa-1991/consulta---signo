@@ -1,188 +1,94 @@
-const dadosSignos = [
-  {
-    nome: "Capricórnio",
-    figura: "♑",
-    inicio: "01-01",
-    fim: "01-19",
-    perfil: "Determinado, prático, focado em metas e muito responsável.",
-  },
-  {
-    nome: "Aquário",
-    figura: "♒",
-    inicio: "01-20",
-    fim: "02-18",
-    perfil: "Inovador, independente, idealista e valoriza muito a liberdade.",
-  },
-  {
-    nome: "Peixes",
-    figura: "♓",
-    inicio: "02-19",
-    fim: "03-20",
-    perfil: "Empático, intuitivo, sonhador e com forte conexão artística.",
-  },
-  {
-    nome: "Áries",
-    figura: "♈",
-    inicio: "03-21",
-    fim: "04-19",
-    perfil: "Corajoso, enérgico, líder nato e cheio de iniciativa.",
-  },
-  {
-    nome: "Touro",
-    figura: "♉",
-    inicio: "04-20",
-    fim: "05-20",
-    perfil:
-      "Paciente, confiável, determinado e amante do conforto e da estabilidade.",
-  },
-  {
-    nome: "Gêmeos",
-    figura: "♊",
-    inicio: "05-21",
-    fim: "06-20",
-    perfil: "Comunicativo, curioso, versátil e adora aprender coisas novas.",
-  },
-  {
-    nome: "Câncer",
-    figura: "♋",
-    inicio: "06-21",
-    fim: "07-22",
-    perfil: "Protetor, intuitivo, ligado à família e com emoções profundas.",
-  },
-  {
-    nome: "Leão",
-    figura: "♌",
-    inicio: "07-23",
-    fim: "08-22",
-    perfil: "Criativo, generoso, confiante e com um magnetismo natural.",
-  },
-  {
-    nome: "Virgem",
-    figura: "♍",
-    inicio: "08-23",
-    fim: "09-22",
-    perfil: "Analítico, organizado, detalhista e sempre pronto a ajudar.",
-  },
-  {
-    nome: "Libra",
-    figura: "♎",
-    inicio: "09-23",
-    fim: "10-22",
-    perfil:
-      "Diplomático, justo, sociável e busca sempre a harmonia e o equilíbrio.",
-  },
-  {
-    nome: "Escorpião",
-    figura: "♏",
-    inicio: "10-23",
-    fim: "11-21",
-    perfil:
-      "Intenso, determinado, intuitivo e com grande poder de transformação.",
-  },
-  {
-    nome: "Sagitário",
-    figura: "♐",
-    inicio: "11-22",
-    fim: "12-21",
-    perfil: "Otimista, aventureiro, bem-humorado e amante da sabedoria.",
-  },
-  {
-    nome: "Capricórnio",
-    figura: "♑",
-    inicio: "12-22",
-    fim: "12-31",
-    perfil: "Determinado, prático, focado em metas e muito responsável.",
-  },
-];
-
-const ordemSignos = [
-  "Áries",
-  "Touro",
-  "Gêmeos",
-  "Câncer",
-  "Leão",
-  "Virgem",
-  "Libra",
-  "Escorpião",
-  "Sagitário",
-  "Capricórnio",
-  "Aquário",
-  "Peixes",
-];
+const ordemSignos = ["Áries", "Touro", "Gêmeos", "Câncer", "Leão", "Virgem", "Libra", "Escorpião", "Sagitário", "Capricórnio", "Aquário", "Peixes"];
+let mensagemCompartilhar = "";
 
 function descobrirMapa() {
-  const inputData = document.getElementById("dataNascimento").value;
-  const inputHora = document.getElementById("horaNascimento").value;
+    const inputData = document.getElementById("dataNascimento").value;
+    const inputHora = document.getElementById("horaNascimento").value;
 
-  if (!inputData || !inputHora) {
-    alert("Por favor, preencha a data e a hora cósmicas!");
-    return;
-  }
-
-  const [ano, mes, dia] = inputData.split("-");
-  const dataFormatada = `${mes}-${dia}`;
-  const signoSolar = dadosSignos.find(
-    (signo) => dataFormatada >= signo.inicio && dataFormatada <= signo.fim,
-  );
-
-  if (signoSolar) {
-    const [hora, minuto] = inputHora.split(":").map(Number);
-    let indiceSolar = ordemSignos.indexOf(signoSolar.nome);
-    let horasPassadasDiz06 = hora >= 6 ? hora - 6 : hora + 18;
-    let passosSignos = Math.floor(horasPassadasDiz06 / 2);
-    let indiceAscendente = (indiceSolar + passosSignos) % 12;
-    let ascendenteCalculado = ordemSignos[indiceAscendente];
-
-    document.getElementById("signoFigura").innerText = signoSolar.figura;
-    document.getElementById("signoNome").innerText =
-      `Signo Solar: ${signoSolar.nome}`;
-    document.getElementById("ascendenteNome").innerText =
-      `Ascendente: ${ascendenteCalculado}`;
-    document.getElementById("signoPerfil").innerText =
-      `${signoSolar.perfil} Seu ascendente em ${ascendenteCalculado} indica a forma como você se projeta para o mundo e a primeira impressão que causa nas pessoas.`;
-    document.getElementById("resultado").style.display = "block";
-  }
-}
-
-// --- INSTALAÇÃO INTELIGENTE DO APP ---
-let disparadorInstalacao = null;
-const botaoInstalar = document.getElementById("btnInstalar");
-
-function exibirBotaoInstalação(evento) {
-  disparadorInstalacao = evento;
-  if (botaoInstalar) {
-    botaoInstalar.style.display = "inline-block"; // Força a exibição imediata
-  }
-}
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  exibirBotaoInstalação(e);
-});
-
-// Captura tardia caso o evento dispare antes do script carregar completamente
-if (window.deferredPrompt) {
-  exibirBotaoInstalação(window.deferredPrompt);
-}
-
-if (botaoInstalar) {
-  botaoInstalar.addEventListener("click", async () => {
-    if (disparadorInstalacao) {
-      disparadorInstalacao.prompt();
-      const { outcome } = await disparadorInstalacao.userChoice;
-      if (outcome === "accepted") {
-        botaoInstalar.style.display = "none";
-      }
-      disparadorInstalacao = null;
+    if (!inputData || !inputHora) {
+        alert("Por favor, preencha a data e a hora cósmicas!");
+        return;
     }
-  });
+
+    const partesData = inputData.split("-");
+    const mes = partesData[1];
+    const dia = partesData[2];
+    const dataFormatada = mes + "-" + dia;
+    
+    const signoSolar = dadosSignos.find(s => dataFormatada >= s.inicio && dataFormatada <= s.fim);
+
+    if (signoSolar) {
+        const partesHora = inputHora.split(":");
+        const hora = Number(partesHora[0]);
+        
+        let indiceSolar = ordemSignos.indexOf(signoSolar.nome);
+        let horasPassadasDiz06 = 0;
+        
+        if (hora >= 6) {
+            horasPassadasDiz06 = hora - 6;
+        } else {
+            horasPassadasDiz06 = hora + 18;
+        }
+        
+        let passosSignos = Math.floor(horasPassadasDiz06 / 2);
+        let indiceAscendente = (indiceSolar + passosSignos) % 12;
+        let ascendenteCalculado = ordemSignos[indiceAscendente];
+
+        switch (signoSolar.elemento) {
+            case "fogo":
+                document.body.style.background = "linear-gradient(135deg, #2e0000, #5c0000, #990000)"; 
+                document.getElementById('mainContainer').style.borderColor = "#ff4500";
+                document.getElementById('mainContainer').style.boxShadow = "0 0 25px rgba(255, 69, 0, 0.6)";
+                break;
+            case "agua":
+                document.body.style.background = "linear-gradient(135deg, #00112c, #00225c, #0044b3)"; 
+                document.getElementById('mainContainer').style.borderColor = "#00f0ff";
+                document.getElementById('mainContainer').style.boxShadow = "0 0 25px rgba(0, 240, 255, 0.6)";
+                break;
+            case "terra":
+                document.body.style.background = "linear-gradient(135deg, #141c00, #283800, #4c6600)"; 
+                document.getElementById('mainContainer').style.borderColor = "#adff2f";
+                document.getElementById('mainContainer').style.boxShadow = "0 0 25px rgba(173, 255, 47, 0.5)";
+                break;
+            case "ar":
+                document.body.style.background = "linear-gradient(135deg, #1a002c, #39005c, #6a00b3)"; 
+                document.getElementById('mainContainer').style.borderColor = "#df00ff";
+                document.getElementById('mainContainer').style.boxShadow = "0 0 25px rgba(223, 0, 255, 0.6)";
+                break;
+        }
+
+        document.getElementById("signoFigura").innerText = signoSolar.figura;
+        document.getElementById("signoNome").innerText = "Signo Solar: " + signoSolar.nome;
+        document.getElementById("ascendenteNome").innerText = "Ascendente: " + ascendenteCalculado;
+        document.getElementById("signoPerfil").innerText = signoSolar.perfil + " Seu ascendente em " + ascendenteCalculado + " é a máscara que você usa para enganar o mundo na primeira impressão!";
+        
+        mensagemCompartilhar = "MEU MAPA ASTRAL EXPRESS \n\nSigno Solar: " + signoSolar.figura + " " + signoSolar.nome + "\nAscendente: " + ascendenteCalculado + "\n\nPerfil: " + signoSolar.perfil + "\n\nDescubra o seu também: " + window.location.href;
+        document.getElementById("resultado").style.display = "block";
+    }
 }
 
-window.addEventListener("appinstalled", () => {
-  if (botaoInstalar) botaoInstalar.style.display = "none";
-  disparadorInstalacao = null;
+function compartilharWhatsApp() {
+    if (mensagemCompartilhar !== "") {
+        window.open("https://whatsapp.com" + encodeURIComponent(mensagemCompartilhar), "_blank");
+    }
+}
+
+let disparadorInstalacao = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault(); 
+    disparadorInstalacao = e;
+    if (document.getElementById('btnInstalar')) document.getElementById('btnInstalar').style.display = 'inline-block';
 });
 
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js");
+if (document.getElementById('btnInstalar')) {
+    document.getElementById('btnInstalar').addEventListener('click', async () => {
+        if (disparadorInstalacao) {
+            disparadorInstalacao.prompt();
+            disparadorInstalacao = null;
+        }
+    });
+}
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
 }
