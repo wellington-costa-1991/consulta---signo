@@ -144,30 +144,45 @@ function descobrirMapa() {
   }
 }
 
-let disparadorInstalacao;
+// --- INSTALAÇÃO INTELIGENTE DO APP ---
+let disparadorInstalacao = null;
 const botaoInstalar = document.getElementById("btnInstalar");
+
+function exibirBotaoInstalação(evento) {
+  disparadorInstalacao = evento;
+  if (botaoInstalar) {
+    botaoInstalar.style.display = "inline-block"; // Força a exibição imediata
+  }
+}
 
 window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
-  disparadorInstalacao = e;
-  botaoInstalar.style.display = "inline-block";
+  exibirBotaoInstalação(e);
 });
 
-botaoInstalar.addEventListener("click", async () => {
-  if (disparadorInstalacao) {
-    disparadorInstalacao.prompt();
-    const { outcome } = await disparadorInstalacao.userChoice;
-    if (outcome === "accepted") {
-      botaoInstalar.style.display = "none";
+// Captura tardia caso o evento dispare antes do script carregar completamente
+if (window.deferredPrompt) {
+  exibirBotaoInstalação(window.deferredPrompt);
+}
+
+if (botaoInstalar) {
+  botaoInstalar.addEventListener("click", async () => {
+    if (disparadorInstalacao) {
+      disparadorInstalacao.prompt();
+      const { outcome } = await disparadorInstalacao.userChoice;
+      if (outcome === "accepted") {
+        botaoInstalar.style.display = "none";
+      }
+      disparadorInstalacao = null;
     }
-    disparadorInstalacao = null;
-  }
-});
+  });
+}
 
 window.addEventListener("appinstalled", () => {
-  botaoInstalar.style.display = "none";
+  if (botaoInstalar) botaoInstalar.style.display = "none";
+  disparadorInstalacao = null;
 });
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js");
+  navigator.serviceWorker.register("./sw.js");
 }
